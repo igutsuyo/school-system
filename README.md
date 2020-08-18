@@ -1,7 +1,7 @@
 # school-system
 
 -このシステムはMVCを用いた簡易なスクール管理システムです。
-デプロイ先はHerokuを利用、以下urlで確認頂けます。
+-デプロイ先はHerokuを利用-以下urlで確認頂けます。
 https://lit-bayou-40533.herokuapp.com/
 
 
