@@ -1,0 +1,19 @@
+<div class="data-form">
+  <form class="form-signin" action="<%=`/courses/create`%>" method="POST">
+    <h2 class="form-signin-heading">新規登録:</h2>
+    <label for="inputTitle">コース名</label>
+    <input type="text" name="title" id="inputTitle" class="form-control" placeholder="コース名" autofocus>
+    <label for="inputDescription">概要</label>
+    <input type="text" name="description" id="inputDescription" class="form-control"  placeholder="概要">
+    <label for="inputMaxStudents">定員</label>
+    <input type="text" name="maxStudents" id="inputMaxStudents" pattern="\d*" class="form-control" placeholder="定員" required>
+    <label for="inputTeacher">担当</label>
+    <input type="text" name="teacher" id="inputTeacher" class="form-control" placeholder="担当">
+
+    <label for="inputStartDay">開講日</label>
+    <input type="text" name="startDay" id="inputStartDay" class="form-control" placeholder="開講日">
+    <label for="inputCost">料金</label>
+    <input type="text" name="cost" id="inputCost" pattern="\d*" class="form-control" placeholder="料金" required>
+    <br /><button class="btn btn-lg btn-primary btn-block" type="submit">登録</button>
+  </form>
+</div>

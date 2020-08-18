@@ -1,0 +1,46 @@
+<h2 class="center">コース一覧</h2>
+<div class="center">
+  <a class="button" href="/courses/new">コース登録</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>コース名（クリックで詳細表示）</th>
+      <th>定員</th>
+      <th>担当</th>
+      <th>開始日</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% courses.forEach(course => { %>
+    <tr>
+      <td class="course-title"> 
+        <a href="<%= `/courses/${course._id}` %>">
+          <%= course.title %>
+        </a>
+      </td>
+      <td>
+        <%= course.maxStudents %>
+        名
+      </td>
+      <td>
+        <%= course.teacher %>
+        先生
+      </td>
+      <td>
+        <%= course.startDay %>
+      </td>
+      <td>
+        <a href="<%=`courses/${course._id}/edit`%>">
+          編集
+        </a>
+      </td>
+      <td>
+        <a href="<%= `courses/${course._id}/delete?_method=DELETE` %>" onclick="return confirm('削除してもよろしいですか?')" a>削除</a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

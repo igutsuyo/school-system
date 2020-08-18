@@ -1,0 +1,46 @@
+<h2 class="center">Users Table</h2>
+<div class="center">
+  <a class="button" href="/users/new">先生を登録</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>名前(クリックで詳細表示)</th>
+      <th>Eメール</th>
+      <th>電話番号</th>
+      <th>担当コース</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+    <tr>
+      <td>
+        <a href="<%=`/users/${user._id}`%>">
+          <%= user.fullName %>
+          先生
+        </a>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= user.tell %>
+      </td>
+      <td>
+        <%= user.teach %>
+      </td>
+
+      <td>
+        <a href="<%=`/users/${user._id}/edit`%>">
+          編集
+        </a>
+      </td>
+      <td>
+        <a href="<%=`/users/${user._id}/delete?_method=DELETE` %>" onclick="return confirm('削除してもよろしいですか?')" a>削除</a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

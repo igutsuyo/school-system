@@ -1,0 +1,44 @@
+<h2 class="center">students Table</h2>
+<div class="center">
+  <a class="button" href="/students/new">生徒を登録</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>名前(クリックで詳細表示)</th>
+      <th>Eメール</th>
+      <th>電話番号</th>
+      <th>住所</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% students.forEach(student => { %>
+    <tr>
+      <td>
+        <a href="<%= `/students/${student._id}` %>">
+          <%= student.name %>
+        </a>
+      </td>
+      <td>
+        <%= student.email %>
+      </td>
+      <td>
+        <%= student.tell %>
+      </td>
+      <td>
+        <%= student.town %>
+      </td>
+      <td>
+        <a href="<%=`students/${student._id}/edit`%>">
+          編集
+        </a>
+      </td>
+      <td>
+        <a href="<%= `students/${student._id}/delete?_method=DELETE` %>" onclick="return confirm('削除してもよろしいですか？')" a>削除</a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+<div class="data-form">
+  <form class="form-signin" action="<%=`/students/${student._id}/update?_method=PUT`%>" method="POST">
+    <h2 class="form-signin-heading">編集　生徒:</h2>
+    <label for="inputName">名前</label>
+    <input type="text" name="name" id="inputName" class="form-control" value="<%= student.name %>" placeholder="名前" autofocus>
+    <label for="inputEmail">Eメール</label>
+    <input type="email" name="email" id="inputEmail" class="form-control" value="<%= student.email %>" placeholder="Eメール" required>
+    <label for="inputZipCode">電話番号</label>
+    <input type="text" name="tell" id="inputTellCode"  class="form-control" value="<%= student.tell %>" placeholder="電話番号" required>
+    <label for="inputTown">住所</label>
+    <input type="text" name="town" id="inputTown" class="form-control" value="<%= student.town %>" placeholder="住所" required>
+    <br /><button class="btn btn-lg btn-primary btn-block" type="submit">登録</button>
+  </form>
+</div>

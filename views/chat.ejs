@@ -1,0 +1,12 @@
+<% if (currentUser) { %>
+<h1>チャット</h1>
+<form id="chatForm">
+    <input id="chat-input" type="text">
+    <input id="chat-user-id" type="hidden" value="<%= currentUser._id %>">
+    <input id="chat-user-name" type="hidden" value="<%=currentUser.fullName %>">
+    <input type="submit" value="送る">
+</form>
+<div id="chat"></div>
+<% }else { %>
+<h2>チャット機能を利用するにはログインをお願いします。</h2>
+<% } %>

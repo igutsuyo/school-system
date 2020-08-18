@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+	<title>School System</title>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/schoolSystem.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/school_system.css">
+</head>
+
+<body>
+	<div id="nav">
+		<div class="col-sm nav-align">
+			<h1 id="title">スクール管理システム</h1>
+		</div>
+		<div class="col-sm nav-align">
+			<a href="/">
+				<span class="button">ホーム</span>
+			</a>
+			<a href="/courses">
+				<span class="button">コース</span>
+			</a>
+			<a href="/students">
+				<span class="button">生徒</span>
+			</a>
+			<a href="/users">
+				<span class="button">先生</span>
+			</a>
+			<a href="/chat">
+				<span class="button">チャット</span>
+			</a>
+		</div>
+		<div class="login">
+			<% if (loggedIn) { %>
+			<p>ログイン名:
+				<a href="<%=`/users/${currentUser._id}`%>">
+					<%= currentUser.fullName %></a>
+				<span class="log-out">
+					<a href="/users/logout">ログアウト</a>
+				</span>
+			</p>
+			<%} else {%>
+			<a href="/users/login">先生用 ログイン</a>
+			<% } %>
+		</div>
+	</div>
+
+	</div>
+	<div class="flashes">
+		<% if (flashMessages) { %>
+		<% if (flashMessages.success) { %>
+		<div class="flash success">
+			<%= flashMessages.success %>
+		</div>
+		<% } else if (flashMessages.error) { %>
+		<div class="flash error">
+			<%= flashMessages.error %>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
+
+	<div class="container">
+		<%- body %>
+	</div>
+
+</body>
+
+</html>
